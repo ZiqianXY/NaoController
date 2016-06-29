@@ -1,7 +1,8 @@
 # -*- encoding: UTF-8 -*-
-import web
 import os
 import sys
+
+import web
 from naoqi import ALProxy
 
 basedir = sys.path[0]
@@ -27,7 +28,7 @@ class index:
 
     def startFile (self, name):
         filename = name+".py"
-        path = os.path.join(basedir, "lib", filename)
+        path = os.path.join(basedir, "motionlib", filename)
         command = 'python '+path
         print command
         os.system(command)
@@ -37,7 +38,7 @@ class index:
         tts.say("即将执行关机操作！")
         command1 = 'sudo shutdown -h now'
         os.system(command1)
-        command2 = 'root\r'
+        command2 = 'root\r'  # here is tha default password of root user
         os.system(command2)
 
 if __name__ == "__main__":
