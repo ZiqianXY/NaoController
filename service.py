@@ -14,6 +14,7 @@ class index:
 
     def __init__(self):
         self.isRunning = False
+
     def GET(self, name):
 
         if((not self.isRunning) and name and (name!='favicon.ico')):
